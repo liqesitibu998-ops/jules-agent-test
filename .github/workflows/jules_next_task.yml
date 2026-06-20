@@ -1,17 +1,16 @@
-name: 2. Trigger Next Jules Task
+﻿name: 2. Trigger Next Jules Task
 
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       prompt:
         description: "Optional task prompt override"
         required: false
-        type: string
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -35,7 +34,7 @@ jobs:
         env:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
           REPOSITORY: ${{ github.repository }}
-          PROMPT_OVERRIDE: ${{ inputs.prompt }}
+          PROMPT_OVERRIDE: ${{ github.event.inputs.prompt }}
         run: |
           if [ -n "$PROMPT_OVERRIDE" ]; then
             PROMPT="$PROMPT_OVERRIDE"
