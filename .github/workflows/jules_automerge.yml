@@ -1,4 +1,4 @@
-name: 1. Auto-Validate and Merge Jules PRs
+﻿name: 1. Auto-Validate and Merge Jules PRs
 
 on:
   pull_request:
@@ -15,7 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     if: >
       github.event.pull_request.user.login == 'google-jules[bot]' ||
-      contains(github.event.pull_request.labels.*.name, 'jules')
+      contains(github.event.pull_request.labels.*.name, 'jules') ||
+      startsWith(github.event.pull_request.head.ref, 'update-') ||
+      startsWith(github.event.pull_request.head.ref, 'jules-')
 
     steps:
       - name: Checkout repository
