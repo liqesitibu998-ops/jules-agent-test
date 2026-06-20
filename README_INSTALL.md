@@ -1,5 +1,7 @@
 # Jules GitHub Actions Loop
 
+**Note: This repository is a Jules automation test.**
+
 This package implements the same basic loop described in the post:
 
 1. Jules creates a Pull Request.
