@@ -1,0 +1,25 @@
+{
+  "replenishment_policy": {
+    "minimum_todo_tasks": 2,
+    "new_tasks_per_completed_task": 2
+  },
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "Inspect repository and document the project structure",
+      "status": "todo",
+      "risk": "low",
+      "allowed_paths": [
+        "docs/**",
+        "README.md",
+        "AGENTS.md",
+        "agent_tasks.json"
+      ],
+      "acceptance_criteria": [
+        "Create or update documentation describing the main folders and entry points.",
+        "Do not change production code.",
+        "Keep existing tests passing if tests exist."
+      ]
+    }
+  ]
+}

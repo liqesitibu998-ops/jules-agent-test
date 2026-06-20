@@ -1,0 +1,56 @@
+name: 1. Auto-Validate and Merge Jules PRs
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+
+jobs:
+  test-and-merge:
+    runs-on: ubuntu-latest
+    if: >
+      github.event.pull_request.user.login == 'google-jules[bot]' ||
+      contains(github.event.pull_request.labels.*.name, 'jules')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest
+
+      - name: Optional task manifest validation
+        run: |
+          if [ -f scripts/validate_agent_tasks.py ] && [ -f agent_tasks.json ]; then
+            python scripts/validate_agent_tasks.py agent_tasks.json
+          else
+            echo "No agent task validator found; skipping."
+          fi
+
+      - name: Run test suite
+        run: |
+          if [ -d tests ] || ls test_*.py >/dev/null 2>&1; then
+            pytest
+          else
+            echo "No tests found; skipping pytest."
+          fi
+
+      - name: Merge PR
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.PAT }}
+        run: |
+          gh pr merge ${{ github.event.pull_request.number }} --merge --delete-branch
