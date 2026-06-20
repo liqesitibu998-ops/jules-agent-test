@@ -7,7 +7,7 @@
     {
       "id": "task-001",
       "title": "Inspect repository and document the project structure",
-      "status": "todo",
+      "status": "done",
       "risk": "low",
       "allowed_paths": [
         "docs/**",
@@ -19,6 +19,34 @@
         "Create or update documentation describing the main folders and entry points.",
         "Do not change production code.",
         "Keep existing tests passing if tests exist."
+      ]
+    },
+    {
+      "id": "task-002",
+      "title": "Add testing philosophy documentation",
+      "status": "todo",
+      "risk": "low",
+      "allowed_paths": [
+        "README.md",
+        "agent_tasks.json"
+      ],
+      "acceptance_criteria": [
+        "Add a section to README.md describing the testing philosophy for the project.",
+        "Keep existing behavior intact."
+      ]
+    },
+    {
+      "id": "task-003",
+      "title": "Improve installation instructions",
+      "status": "todo",
+      "risk": "low",
+      "allowed_paths": [
+        "README_INSTALL.md",
+        "agent_tasks.json"
+      ],
+      "acceptance_criteria": [
+        "Review README_INSTALL.md and ensure prerequisites are clearly listed.",
+        "Make minor formatting improvements."
       ]
     }
   ]
