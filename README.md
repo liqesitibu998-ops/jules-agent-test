@@ -9,3 +9,9 @@ This repository is primarily a documentation and task queue project.
 - **`agent_tasks.json`**: The main task queue file, tracking the status of `"todo"` and `"done"` items.
 - **`README.md`**: This file, providing an overview of the project structure.
 - **`README_INSTALL.md`**: Details any installation or setup instructions.
+
+## Testing Philosophy
+
+This repository is primarily a documentation and task queue project, so it currently lacks traditional test suites (no unit, integration, or end-to-end tests exist).
+
+However, any future code behavior changes should be accompanied by appropriate tests to ensure stability and verify functionality.
