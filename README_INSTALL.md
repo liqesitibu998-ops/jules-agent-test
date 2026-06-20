@@ -17,6 +17,14 @@ This package implements the same basic loop described in the post:
 - `AGENTS.md`
 - `agent_tasks.json`
 
+## Prerequisites
+
+Before starting, ensure you have the following:
+
+- A GitHub account and a repository to test in.
+- A Jules account.
+- Basic understanding of GitHub Actions.
+
 ## Required GitHub Secrets
 
 Add these in GitHub:
@@ -26,9 +34,8 @@ Repository → Settings → Secrets and variables → Actions → New repository
 Required:
 
 - `JULES_API_KEY`
-- `PAT`
 
-`PAT` is a GitHub classic token with permissions for repository contents and pull requests. If the workflow needs to edit workflows, it also needs workflow permission.
+Instead of configuring a `PAT` secret, workflows using the GitHub CLI (`gh`) should authenticate by setting the `GH_TOKEN` environment variable to `${{ github.token }}`.
 
 ## Required Jules Setup
 

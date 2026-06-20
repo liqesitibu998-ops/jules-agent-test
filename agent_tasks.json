@@ -38,7 +38,7 @@
     {
       "id": "task-003",
       "title": "Improve installation instructions",
-      "status": "todo",
+      "status": "done",
       "risk": "low",
       "allowed_paths": [
         "README_INSTALL.md",
@@ -73,6 +73,32 @@
       ],
       "acceptance_criteria": [
         "Review and improve the project description in README.md."
+      ]
+    },
+    {
+      "id": "task-006",
+      "title": "Add code of conduct",
+      "status": "todo",
+      "risk": "low",
+      "allowed_paths": [
+        "README.md",
+        "agent_tasks.json"
+      ],
+      "acceptance_criteria": [
+        "Add a Code of Conduct section to README.md."
+      ]
+    },
+    {
+      "id": "task-007",
+      "title": "Review security policy",
+      "status": "todo",
+      "risk": "low",
+      "allowed_paths": [
+        "SECURITY.md",
+        "agent_tasks.json"
+      ],
+      "acceptance_criteria": [
+        "Create a simple SECURITY.md file detailing vulnerability reporting."
       ]
     }
   ]
