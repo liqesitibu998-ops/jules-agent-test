@@ -24,7 +24,7 @@
     {
       "id": "task-002",
       "title": "Add testing philosophy documentation",
-      "status": "todo",
+      "status": "done",
       "risk": "low",
       "allowed_paths": [
         "README.md",
@@ -47,6 +47,32 @@
       "acceptance_criteria": [
         "Review README_INSTALL.md and ensure prerequisites are clearly listed.",
         "Make minor formatting improvements."
+      ]
+    },
+    {
+      "id": "task-004",
+      "title": "Add contributing guidelines",
+      "status": "todo",
+      "risk": "low",
+      "allowed_paths": [
+        "README.md",
+        "agent_tasks.json"
+      ],
+      "acceptance_criteria": [
+        "Add a Contributing Guidelines section to README.md."
+      ]
+    },
+    {
+      "id": "task-005",
+      "title": "Review project description",
+      "status": "todo",
+      "risk": "low",
+      "allowed_paths": [
+        "README.md",
+        "agent_tasks.json"
+      ],
+      "acceptance_criteria": [
+        "Review and improve the project description in README.md."
       ]
     }
   ]
